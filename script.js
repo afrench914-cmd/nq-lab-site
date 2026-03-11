@@ -24,7 +24,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.feature-card, .pipeline-step, .discord-msg, .section-header').forEach(el => {
+document.querySelectorAll('.feature-card, .model-card, .pipeline-step, .discord-msg, .section-header, .faq-item').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
@@ -48,6 +48,18 @@ document.head.appendChild(style);
 // Stagger feature cards
 document.querySelectorAll('.feature-card').forEach((card, i) => {
     card.style.setProperty('--i', i);
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!isOpen) item.classList.add('open');
+    });
 });
 
 // Nav background on scroll

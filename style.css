@@ -599,6 +599,196 @@ body {
 }
 
 /* ========================================
+   Models
+   ======================================== */
+
+.models {
+    padding: 100px 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.model-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.model-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+}
+
+.model-card.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.05);
+}
+
+.model-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: var(--text-dim);
+}
+
+.model-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.model-dot.live {
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
+}
+
+.model-dot.upcoming {
+    background: var(--text-dim);
+}
+
+.model-card.active .model-status {
+    color: var(--accent);
+}
+
+.model-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.model-tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+}
+
+.model-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.model-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+}
+
+.model-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.detail-label {
+    color: var(--text-dim);
+}
+
+.detail-value {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ========================================
+   FAQ
+   ======================================== */
+
+.faq {
+    padding: 100px 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg);
+    transition: border-color 0.2s;
+}
+
+.faq-item.open {
+    border-color: var(--border-light);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question svg {
+    width: 18px;
+    height: 18px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.faq-item.open .faq-question svg {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer p {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
    Join CTA
    ======================================== */
 
@@ -698,7 +888,8 @@ body {
    ======================================== */
 
 @media (max-width: 900px) {
-    .features-grid {
+    .features-grid,
+    .models-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -726,7 +917,8 @@ body {
         display: flex;
     }
 
-    .features-grid {
+    .features-grid,
+    .models-grid {
         grid-template-columns: 1fr;
     }
 
