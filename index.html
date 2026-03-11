@@ -44,6 +44,75 @@
     <section class="hero">
         <div class="hero-glow"></div>
         <div class="hero-glow-2"></div>
+
+        <!-- Animated candlestick chart background -->
+        <div class="hero-candles" aria-hidden="true">
+            <svg class="candle-chart" viewBox="0 0 800 300" preserveAspectRatio="none">
+                <!-- Grid lines -->
+                <line x1="0" y1="60" x2="800" y2="60" stroke="#1a1a1a" stroke-width="0.5"/>
+                <line x1="0" y1="120" x2="800" y2="120" stroke="#1a1a1a" stroke-width="0.5"/>
+                <line x1="0" y1="180" x2="800" y2="180" stroke="#1a1a1a" stroke-width="0.5"/>
+                <line x1="0" y1="240" x2="800" y2="240" stroke="#1a1a1a" stroke-width="0.5"/>
+
+                <!-- Candle wicks and bodies -->
+                <!-- Bearish candles (red) -->
+                <line x1="60" y1="80" x2="60" y2="200" stroke="#ff444488" stroke-width="1.5"/>
+                <rect x="52" y="100" width="16" height="60" fill="#ff444444" rx="1"/>
+
+                <line x1="140" y1="120" x2="140" y2="220" stroke="#ff444488" stroke-width="1.5"/>
+                <rect x="132" y="140" width="16" height="50" fill="#ff444444" rx="1"/>
+
+                <!-- Bullish candles (green) -->
+                <line x1="220" y1="100" x2="220" y2="240" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="212" y="130" width="16" height="70" fill="#00e67644" rx="1"/>
+
+                <line x1="300" y1="60" x2="300" y2="200" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="292" y="80" width="16" height="80" fill="#00e67644" rx="1"/>
+
+                <line x1="380" y1="40" x2="380" y2="180" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="372" y="60" width="16" height="90" fill="#00e67644" rx="1"/>
+
+                <!-- FVG zone highlight -->
+                <rect x="340" y="150" width="120" height="30" fill="#00e67610" stroke="#00e67630" stroke-width="1" stroke-dasharray="4 2" rx="2"/>
+                <text x="400" y="168" fill="#00e67650" font-size="10" text-anchor="middle" font-family="Inter">FVG</text>
+
+                <!-- More candles -->
+                <line x1="460" y1="50" x2="460" y2="160" stroke="#ff444488" stroke-width="1.5"/>
+                <rect x="452" y="70" width="16" height="50" fill="#ff444444" rx="1"/>
+
+                <line x1="540" y1="80" x2="540" y2="190" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="532" y="100" width="16" height="60" fill="#00e67644" rx="1"/>
+
+                <line x1="620" y1="50" x2="620" y2="170" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="612" y="70" width="16" height="70" fill="#00e67644" rx="1"/>
+
+                <line x1="700" y1="30" x2="700" y2="150" stroke="#00e67688" stroke-width="1.5"/>
+                <rect x="692" y="40" width="16" height="80" fill="#00e67644" rx="1"/>
+
+                <!-- Sweep arrow -->
+                <path d="M130 225 L130 235 L150 230 Z" fill="#ff444466"/>
+                <text x="160" y="234" fill="#ff444466" font-size="9" font-family="Inter">SWEEP</text>
+
+                <!-- Entry arrow -->
+                <path d="M380 185 L380 175 L400 180 Z" fill="#00e67666"/>
+                <text x="405" y="184" fill="#00e67666" font-size="9" font-family="Inter">ENTRY</text>
+            </svg>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="particles" aria-hidden="true">
+            <div class="particle" style="--x: 10%; --y: 20%; --d: 8s; --s: 3px;"></div>
+            <div class="particle" style="--x: 25%; --y: 60%; --d: 12s; --s: 2px;"></div>
+            <div class="particle" style="--x: 40%; --y: 30%; --d: 10s; --s: 4px;"></div>
+            <div class="particle" style="--x: 55%; --y: 70%; --d: 14s; --s: 2px;"></div>
+            <div class="particle" style="--x: 70%; --y: 15%; --d: 9s; --s: 3px;"></div>
+            <div class="particle" style="--x: 85%; --y: 50%; --d: 11s; --s: 2px;"></div>
+            <div class="particle" style="--x: 15%; --y: 80%; --d: 13s; --s: 3px;"></div>
+            <div class="particle" style="--x: 90%; --y: 25%; --d: 7s; --s: 4px;"></div>
+            <div class="particle" style="--x: 50%; --y: 45%; --d: 15s; --s: 2px;"></div>
+            <div class="particle" style="--x: 35%; --y: 85%; --d: 10s; --s: 3px;"></div>
+        </div>
+
         <div class="hero-content">
             <div class="hero-badge">AI-Powered Trading Models</div>
             <h1>The Future of<br><span class="gradient-text">NQ Futures Trading</span></h1>
@@ -70,6 +139,21 @@
             </div>
         </div>
     </section>
+
+    <!-- Price Line Divider -->
+    <div class="price-line-divider" aria-hidden="true">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
+            <polyline points="0,20 50,22 100,18 150,20 200,15 250,22 300,10 350,25 400,8 450,18 500,12 550,20 600,5 650,22 700,15 750,20 800,10 850,25 900,12 950,18 1000,20 1050,15 1100,22 1150,18 1200,20" fill="none" stroke="url(#priceGrad)" stroke-width="2"/>
+            <defs>
+                <linearGradient id="priceGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="transparent"/>
+                    <stop offset="30%" stop-color="#00e676"/>
+                    <stop offset="70%" stop-color="#00e676"/>
+                    <stop offset="100%" stop-color="transparent"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
     <!-- Live Ticker -->
     <section class="ticker">
@@ -389,10 +473,27 @@
         </div>
     </section>
 
+    <!-- Price Line Divider 2 -->
+    <div class="price-line-divider" aria-hidden="true">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
+            <polyline points="0,20 40,15 80,25 120,10 160,20 200,18 240,8 280,22 320,12 360,28 400,15 440,20 480,5 520,18 560,25 600,12 640,20 680,8 720,22 760,15 800,28 840,10 880,20 920,18 960,12 1000,22 1040,15 1080,25 1120,18 1160,20 1200,15" fill="none" stroke="url(#priceGrad2)" stroke-width="2"/>
+            <defs>
+                <linearGradient id="priceGrad2" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="transparent"/>
+                    <stop offset="30%" stop-color="#00e676"/>
+                    <stop offset="70%" stop-color="#00e676"/>
+                    <stop offset="100%" stop-color="transparent"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+
     <!-- CTA / Join -->
     <section class="join" id="join">
         <div class="container">
             <div class="join-glow"></div>
+            <!-- Scan line animation -->
+            <div class="scan-line" aria-hidden="true"></div>
             <div class="join-content">
                 <h2>Ready to Trade Smarter?</h2>
                 <p>Join the NQ Lab Discord for free. Get real-time alerts from every active model, AI-powered analysis, and a community of serious NQ traders.</p>
